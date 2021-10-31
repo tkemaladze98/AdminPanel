@@ -1,0 +1,110 @@
+<form #form="ngForm" [formGroup]="cvForm" (ngSubmit)="onFormSubmit(hotel)">
+    <mat-form-field appearance="outline">
+        <mat-label for="roomType">Type</mat-label>
+        <mat-select formControlName="roomType" class="form-control" id="roomType">
+            <mat-option *ngFor="let type of roomTypes" [value]="type">{{type}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label for="facilities">Facilities</mat-label>
+        <mat-select formControlName="facilities" multiple class="form-control" id="facilities">
+            <mat-option *ngFor="let facilitie of hotelFacilities" [value]="facilitie">{{facilitie}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label for="view">View</mat-label>
+        <mat-select formControlName="view" class="form-control" id="view">
+            <mat-option *ngFor="let rview of views" [value]="rview">{{rview}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label for="sale">Sale</mat-label>
+        <mat-select formControlName="sale" class="form-control" id="sale">
+            <mat-option value="yes">Yes</mat-option>
+            <mat-option value="no">No</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label for="reserveDates">ReserveDates</mat-label>
+        <mat-select formControlName="reserveDates" multiple class="form-control" id="reserveDates">
+
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label for="size">Size</mat-label>
+        <input class="form-control" id="size" matInput type="number" formControlName="size">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label for="prise">Prise</mat-label>
+        <input class="form-control" id="prise" matInput type="number" formControlName="prise">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label for="smoking">Smoking</mat-label>
+        <mat-select formControlName="smoking" class="form-control" id="smoking">
+            <mat-option value="yes">Yes</mat-option>
+            <mat-option value="no">No</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label for="parking">Parking</mat-label>
+        <mat-select formControlName="parking" class="form-control" id="parking">
+            <mat-option value="yes">Yes</mat-option>
+            <mat-option value="no">No</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label for="animals">Animals</mat-label>
+        <mat-select formControlName="animals" class="form-control" id="animals">
+            <mat-option value="yes">Yes</mat-option>
+            <mat-option value="no">No</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field>
+        <div>
+            <mat-toolbar>
+                <input placeholder="Other pictures" matInput readonly name="name" />
+                <button mat-flat-button color="primary">
+                    Browse File
+                </button>
+            </mat-toolbar>
+            <input multiple type="file" #filesInput id="uploadFile" (change)=" uploadMultFileEvt($event) "
+                name="uploadFile" />
+        </div>
+    </mat-form-field>
+
+    <div formGroupName="children">
+        <mat-form-field appearance="outline">
+            <mat-label for="tosix">to Six years old</mat-label>
+            <input class="form-control" id="tosix" matInput type="number" formControlName="tosix">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label for="totvelve">From six to tvelve</mat-label>
+            <input class="form-control" id="totvelve" matInput type="number" formControlName="totvelve">
+        </mat-form-field>
+    </div>
+    <button *ngIf="visible" mat-raised-button color="primary" [disabled]="!form.valid">Submit</button>
+    <button *ngIf="!visible" mat-raised-button color="primary" type="button" (click)="update(hotel)">Update</button>
+</form>
+
+
+<!-- <div class="example-container">
+    <div class="form-container">
+      <form [formGroup]="loginForm" (submit)="submit()">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> E-mail
+          </mat-label>
+          <input matInput formControlName="email" required>
+          
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Password
+          </mat-label>
+          <input matInput formControlName="password" type="password">
+          
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Log In</button>
+      </form>
+    </div>
+  </div> -->

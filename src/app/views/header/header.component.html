@@ -1,0 +1,8 @@
+<mat-toolbar>
+    <h1>Travel<span class="redSpan">More</span></h1>
+    <mat-nav-list>
+        <mat-list-item *ngFor="let icon of icons">  
+            <a matLine (click)="onbtnClick(icon)"><mat-icon>{{icon}}</mat-icon></a>
+        </mat-list-item>
+    </mat-nav-list>
+</mat-toolbar>

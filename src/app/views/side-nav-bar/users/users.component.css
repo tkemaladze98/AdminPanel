@@ -1,0 +1,92 @@
+.tableArea {
+  margin: auto;
+  width: 50%;
+}
+
+table {
+  margin: auto;
+  margin-top: 100px;
+  width: 100%;
+  font-family: 'Gowun Batang', serif;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-diagram img {
+  height: 100%;
+  width: 100%;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+
+.demo-button-container {
+  margin-top: 10px;
+}
+.mat-icon{
+  font-size: 20px
+}
+
+.mat-raised-button {
+  padding-left: 5px;
+  font-size: 16px;
+  font-family: 'Gowun Batang', serif;
+}
+
+  .admin {
+    background-color: green;
+    color: white;
+  }
+
+  .user {
+    background-color: rgb(115, 131, 115);
+    color: white;
+  }
+
+  .mat-raised-button {
+   padding: 0px 10px;
+  }
+
+  .example-element-name,.example-element-weight {
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }

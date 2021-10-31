@@ -1,0 +1,41 @@
+.mat-card {
+    width: 11rem;
+    text-align: center;
+    margin-left: 1rem;
+    font-family: 'Gowun Batang', serif;
+    margin-bottom: 10px;
+}
+
+.mat-card-subtitle .mat-icon{
+    color: gold;
+}
+
+.vip {
+    background-color: rgb(17, 0, 255);
+    color: white;
+}
+
+.user {
+    background-color: rgb(54, 182, 31);
+    color: white;
+    
+}
+
+.address, .contactInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    
+}
+
+.cardsArea {
+    display: flex;
+    justify-content: center;
+   flex-wrap: wrap;
+}
+
+.mat-raised-button {
+    font-family: 'Gowun Batang', serif;
+}

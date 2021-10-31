@@ -1,0 +1,68 @@
+.mat-card {
+    width: 11rem;
+    text-align: left;
+    margin-left: 1rem;
+    font-family: 'Gowun Batang', serif;
+}
+
+.mat-card-header {
+    justify-content: space-around;
+}
+.mat-card-title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+
+.mat-card-subtitle .mat-icon{
+    color: gold;
+}
+.facilities {
+    margin-top: 30px;
+}
+.vip {
+    background-color: rgb(17, 0, 255);
+    color: white;
+}
+
+.user {
+    background-color: rgb(54, 182, 31);
+    color: white;
+    
+}
+
+.address, .contactInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+    
+}
+
+.cardsArea {
+    display: flex;
+    justify-content: center;
+   
+}
+
+.mat-raised-button {
+    font-family: 'Gowun Batang', serif;
+}
+
+.children {
+    text-align: left;
+    font-family: 'Gowun Batang', serif;
+}
+
+.facilitiesArea {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.mat-card-actions {
+    display: flex;
+    justify-content: center;
+}

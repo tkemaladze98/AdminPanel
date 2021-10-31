@@ -1,0 +1,23 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Hotel Column -->
+  <ng-container matColumnDef="Hotel">
+    <mat-header-cell *matHeaderCellDef> Reserved Hotel Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Hotel}} </mat-cell>
+  </ng-container>
+
+  <!-- Room Column -->
+  <ng-container matColumnDef="Room">
+    <mat-header-cell *matHeaderCellDef> Reserved Room Number </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Room}} </mat-cell>
+  </ng-container>
+
+  <!-- Range Column -->
+  <ng-container matColumnDef="Range">
+    <mat-header-cell *matHeaderCellDef> Reserve Range </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Range}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+</mat-table>

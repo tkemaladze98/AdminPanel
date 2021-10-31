@@ -1,0 +1,91 @@
+<form (ngSubmit)=onFormSubmit(form) #form="ngForm">
+    <mat-form-field appearance="outline">
+        <mat-label for="userName">Name</mat-label>
+        <input matInput name="userName" ngModel #userName="ngModel" required pattern="[a-zA-Z ]*" minlength="2" type="text"
+            class="form-control">
+        <mat-icon [ngClass]="{'vaidated': userName.valid}" matSuffix>check_circle</mat-icon>
+    </mat-form-field>
+    <fieldset ngModelGroup='address'>
+        <mat-form-field appearance="outline">
+            <mat-label for="country">country</mat-label>
+            <input matInput name="country" ngModel #country="ngModel" required type="text" class="form-control">
+            <mat-icon [ngClass]="{'vaidated': country.valid}" matSuffix>check_circle</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label for="city">city</mat-label>
+            <input matInput name="city" ngModel #city="ngModel" required type="text" class="form-control">
+            <mat-icon [ngClass]="{'vaidated': city.valid}" matSuffix>check_circle</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label for="addressLocation">addressLocation</mat-label>
+            <input matInput name="addressLocation" ngModel #addressLocation="ngModel" required type="text" class="form-control">
+            <mat-icon [ngClass]="{'vaidated': addressLocation.valid}" matSuffix>check_circle</mat-icon>
+        </mat-form-field>
+    </fieldset>
+    <mat-form-field appearance="outline">
+        <mat-label for="phone">Phone</mat-label>
+        <input matInput name="phone" ngModel #phone="ngModel" required type="number"
+            class="form-control">
+        <mat-icon [ngClass]="{'vaidated': phone.valid}" matSuffix>check_circle</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label for="email">Email</mat-label>
+        <input matInput name="email" ngModel #email="ngModel" required type="text" class="form-control">
+        <mat-icon [ngClass]="{'vaidated': email.valid}" matSuffix>check_circle</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label for="stars">Stars</mat-label>
+        <mat-select name="stars" ngModel #stars="ngModel" matNativeControl required>
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label for="status">Status</mat-label>
+        <mat-select name="status" ngModel #status="ngModel" matNativeControl required>
+            <mat-option value="0">user</mat-option>
+            <mat-option value="1">VIP</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <div>
+          <mat-toolbar>
+            <input placeholder="Profile Picture" matInput readonly name="name"/>
+            <button mat-flat-button color="primary">
+              Browse File
+            </button>
+          </mat-toolbar>
+          <input 
+          type="file" 
+          #fileInput 
+          id="uploadFile" 
+          (change)="uploadFileEvt($event)" 
+          name="uploadFile" 
+          />
+        </div>
+      </mat-form-field>
+      <mat-form-field>
+        <div>
+          <mat-toolbar>
+            <input placeholder="Other pictures" matInput readonly name="name"/>
+            <button mat-flat-button color="primary">
+              Browse File
+            </button>
+          </mat-toolbar>
+          <input 
+          multiple
+          type="file"
+          #filesInput 
+          id="uploadFile" 
+          (change)=" uploadMultFileEvt($event) " 
+          name="uploadFile" 
+          />
+        </div>
+      </mat-form-field>
+    <button *ngIf="visible" mat-flat-button color="primary" class="btn btn-dark col-md-12">Submit</button>
+    <button *ngIf="!visible" type="button" (click)="UpdateHotelInfo(form)" [disabled]="!form.valid" mat-flat-button color="primary" class="btn btn-dark col-md-12">Update</button>
+</form>
+

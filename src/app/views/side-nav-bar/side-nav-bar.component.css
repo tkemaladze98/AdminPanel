@@ -1,0 +1,64 @@
+.example-container {
+    position: fixed;
+    top: 4rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.example-radio-group {
+    display: block;
+    border: 1px solid #555;
+    margin: 20px;
+    padding: 10px;
+}
+
+.mat-sidenav-content button {
+    
+    background-color: rgb(30, 30, 45);
+    color: rgb(100, 112, 119);
+    border: none;
+    transition: 200ms;
+    cursor: pointer;
+}
+
+.mat-sidenav-content button:hover{
+    color: rgb(1, 155, 243);
+}
+
+
+.mat-sidenav {
+    background-color: rgb(30, 30, 45);
+    
+}
+
+
+.mat-list-item {
+    color: rgb(147, 147, 204); 
+    margin-top: 2rem;
+    transition: 300ms;
+    font-family: 'Playfair Display', serif;
+    
+}
+
+.mat-list-item:hover {
+    background-color: rgb(219, 20, 48);
+    color: white;
+}
+
+.mat-list-item a {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.mat-list-item .mat-icon {
+    margin-right: 8px;
+}
+
+
+.active {
+    background-color: rgb(219, 20, 48);
+    color: white;
+}
+

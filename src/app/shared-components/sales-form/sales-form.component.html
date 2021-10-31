@@ -1,0 +1,38 @@
+<form #form="ngForm" [formGroup]="cvForm" (ngSubmit)=onFormSubmit(form)>
+    <mat-form-field appearance="outline">
+        <mat-label for="size">Sale size</mat-label>
+        <input class="form-control" id="size" matInput type="number" formControlName="size">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label for="name">Sale Name</mat-label>
+        <input class="form-control" id="name" matInput type="text" formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label for="description">Sale Description</mat-label>
+        <input class="form-control" id="description" matInput type="text" formControlName="description">
+    </mat-form-field>
+    <div formGroupName="range" class="saleDate">
+        <mat-label>Enter a sale range</mat-label>
+        <mat-date-range-input [rangePicker]="picker" [dateFilter]="unuvalableDate">
+            <input matStartDate formControlName="start" #startDate placeholder="Start date">
+            <input matEndDate formControlName="end" #endDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+        <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+        <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+    </div>
+    <mat-form-field>
+        <div>
+            <mat-toolbar>
+                <input placeholder="Profile picture" matInput readonly name="name" />
+                <button mat-flat-button color="primary">
+                    Browse File
+                </button>
+            </mat-toolbar>
+            <input multiple type="file" #filesInput id="uploadFile"(change)=" uploadMultFileEvt($event)" name="uploadFile" />
+        </div>
+    </mat-form-field>
+    <button mat-flat-button color="primary" class="btn btn-dark col-md-12">Submit</button>
+
+</form>
