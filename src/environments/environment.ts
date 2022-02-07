@@ -10,16 +10,16 @@ export const environment = {
     sales: "sales-collection"
   },
   firebaseConfig: {
-    apiKey: "AIzaSyCBQoMxkXXm8C3ygFt6wbIgFKDYyz3Jc18",
-    authDomain: "bookinghotels-e7754.firebaseapp.com",
-    databaseURL: "https://bookinghotels-e7754-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "bookinghotels-e7754",
-    storageBucket: "bookinghotels-e7754.appspot.com",
-    messagingSenderId: "575600734199",
-    appId: "1:575600734199:web:c7d2ff9dbbeae41b9488f2",
-    measurementId: "G-0QD58V2GDP"
+    apiKey: "AIzaSyDh5qsy73Jn6HUqf8ASXz32CgcpetJEF5I",
+    authDomain: "project-1-e442b.firebaseapp.com",
+    databaseURL: "https://project-1-e442b-default-rtdb.firebaseio.com",
+    projectId: "project-1-e442b",
+    storageBucket: "project-1-e442b.appspot.com",
+    messagingSenderId: "277379812321",
+    appId: "1:277379812321:web:a4e362049f42b989a060a0",
+    measurementId: "G-Z3BGHP2JTJ"
   }
-  
+
 };
 
 /*
