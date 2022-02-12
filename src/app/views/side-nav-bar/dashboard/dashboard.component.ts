@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
     this.firebase.readAllHotel().subscribe((response: any) => {
       this.dataSource = []
       response.forEach((element: any) => {
-        var roomIndex = -1
+        var roomIndex = 0
         var hotelData = element.payload.doc.data()
         hotelData.rooms.forEach((room:any) => {
           roomIndex += 1
