@@ -34,9 +34,9 @@ export class ReactiveFormComponent implements OnInit {
 
   uploadMultFileEvt(imgFile: any) {
     let self = this;
-    for (let i = 0; i < imgFile.target.files.length; i++) {
+    for (const element of imgFile.target.files) {
       const reader = new FileReader();
-      reader.readAsDataURL(imgFile.target.files[i]);
+      reader.readAsDataURL(element);
       reader.onload = function () {
         self.otherPictures.push(reader.result);
       }
