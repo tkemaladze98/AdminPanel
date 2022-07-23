@@ -6,13 +6,14 @@ export const environment = {
     sales: 'sales-collection',
   },
   firebaseConfig: {
-    apiKey: 'AIzaSyAmwgxNT9sJz1D4S-BXpG7KHoVRjFZa9CM',
-    authDomain: 'booking-hotels-70e97.firebaseapp.com',
-    databaseURL: 'https://booking-hotels-70e97-default-rtdb.firebaseio.com',
-    projectId: 'booking-hotels-70e97',
-    storageBucket: 'booking-hotels-70e97.appspot.com',
-    messagingSenderId: '1060562286818',
-    appId: '1:1060562286818:web:855b1071278fb9d2ccc6bb',
-    measurementId: 'G-4V00LMDCXQ',
+    apiKey: 'AIzaSyCBQoMxkXXm8C3ygFt6wbIgFKDYyz3Jc18',
+    authDomain: 'bookinghotels-e7754.firebaseapp.com',
+    databaseURL:
+      'https://bookinghotels-e7754-default-rtdb.europe-west1.firebasedatabase.app',
+    projectId: 'bookinghotels-e7754',
+    storageBucket: 'bookinghotels-e7754.appspot.com',
+    messagingSenderId: '575600734199',
+    appId: '1:575600734199:web:c7d2ff9dbbeae41b9488f2',
+    measurementId: 'G-0QD58V2GDP',
   },
 };
