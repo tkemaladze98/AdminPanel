@@ -1,18 +1,18 @@
 export const environment = {
   production: true,
   firebaseCollections: {
-    user: "user-collection",
-    hotels: "hotels-collection",
-    sales: "sales-collection"
+    user: 'user-collection',
+    hotels: 'hotels-collection',
+    sales: 'sales-collection',
   },
   firebaseConfig: {
-    apiKey: "AIzaSyDh5qsy73Jn6HUqf8ASXz32CgcpetJEF5I",
-    authDomain: "project-1-e442b.firebaseapp.com",
-    databaseURL: "https://project-1-e442b-default-rtdb.firebaseio.com",
-    projectId: "project-1-e442b",
-    storageBucket: "project-1-e442b.appspot.com",
-    messagingSenderId: "277379812321",
-    appId: "1:277379812321:web:a4e362049f42b989a060a0",
-    measurementId: "G-Z3BGHP2JTJ"
-  }
+    apiKey: 'AIzaSyAmwgxNT9sJz1D4S-BXpG7KHoVRjFZa9CM',
+    authDomain: 'booking-hotels-70e97.firebaseapp.com',
+    databaseURL: 'https://booking-hotels-70e97-default-rtdb.firebaseio.com',
+    projectId: 'booking-hotels-70e97',
+    storageBucket: 'booking-hotels-70e97.appspot.com',
+    messagingSenderId: '1060562286818',
+    appId: '1:1060562286818:web:855b1071278fb9d2ccc6bb',
+    measurementId: 'G-4V00LMDCXQ',
+  },
 };

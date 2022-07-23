@@ -15,6 +15,8 @@ export class SignInUpPgComponent implements OnInit {
   constructor(private route:Router, private location: Location) { }
 
   ngOnInit(): void {
+    // TODO document why this method 'ngOnInit' is empty
+  
     
   }
 
