@@ -3,12 +3,12 @@
     <mat-form-field appearance="outline">
         <mat-label for="email">Email</mat-label>
         <input type="email"  name="email" [(ngModel)]="userEmail"  matInput required placeholder="Ex. pat@example.com">
-        <mat-icon [ngClass]="{'fieldIsfilled': userEmail}" matSuffix>check_circle</mat-icon>
+        <mat-icon [ngClass]="{'fieldIsFilled': userEmail}" matSuffix>check_circle</mat-icon>
     </mat-form-field>
     <mat-form-field appearance="outline">
         <mat-label for="password">Password</mat-label>
         <input type="password" name="password" [(ngModel)]="userPassword" matInput required>
-        <mat-icon [ngClass]="{'fieldIsfilled': userPassword}" matSuffix>check_circle</mat-icon>
+        <mat-icon [ngClass]="{'fieldIsFilled': userPassword}" matSuffix>check_circle</mat-icon>
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="onbtnClick()">Sign in</button>
+    <button mat-raised-button color="primary" (click)="onBtnClick()">Sign in</button>
 </form>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AutorisationComponent } from './shared-components/autorisation/autorisation.component';
+import { AuthorizationComponent } from './shared-components/authorization/authorization.component';
 import { ReactiveFormComponent } from './shared-components/reactive-form/reactive-form.component';
 import { RegistrationComponent } from './shared-components/registration/registration.component';
 import { SalesFormComponent } from './shared-components/sales-form/sales-form.component';
@@ -16,27 +16,27 @@ import { SignInUpPgComponent } from './views/sign-in-up-pg/sign-in-up-pg.compone
 import { UpdateHotelComponent } from './views/update-hotel/update-hotel.component';
 
 
-const routes: Routes = [ 
+const routes: Routes = [
   { path: 'main', component: MainPgComponent,
   children: [
   { path: 'Dashboard', component: DashboardComponent},
   { path: 'Hotels', component: HotelsComponent},
   { path: 'Users', component: UsersComponent},
   { path: 'Sales', component: SalesComponent},
-  { path: 'templateDrivenform', component: TemplateDrivenFormComponent},
+  { path: 'templateDrivenForm', component: TemplateDrivenFormComponent},
   { path:'update/:key',  component:UpdateHotelComponent},
   { path: 'Rooms/:key', component: RoomsComponent},
-  { path: 'reavtive/:key/:index', component: ReactiveFormComponent},
+  { path: 'reactive/:key/:index', component: ReactiveFormComponent},
   {path: 'reserve/:key/:index', component: ReservationComponent},
   {path: 'salesForm' , component:SalesFormComponent}
   ]
 },
-  
-  
+
+
   { path: 'registration', component: RegistrationComponent },
-  { path: 'autorisation', component: AutorisationComponent},
+  { path: 'authorization', component: AuthorizationComponent},
   { path: 'signInUp', component: SignInUpPgComponent}
- 
+
 ];
 
 @NgModule({

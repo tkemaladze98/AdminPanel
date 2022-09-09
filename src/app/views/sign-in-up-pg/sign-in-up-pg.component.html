@@ -1,34 +1,32 @@
-<div *ngIf='visibility'  class="forms">
-<div class="registrationForm">
+<div *ngIf="visibility" class="forms">
+  <div class="registrationForm">
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="goToRegistrationOrSignInComp('registration')"
+    >
+      Registration
+    </button>
+  </div>
 
-<button  
-mat-flat-button 
-color="primary" 
-(click)="goToRegistrationOrSignInComp('registration')">
-Registration
-</button>
+  <div class="logoArea">
+    <p class="question">Do you want to?</p>
+    <h1>TRAVEL</h1>
+    <p class="more"><span id="bigm">M</span>ORE</p>
+  </div>
 
+  <div class="autorisationForm">
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="goToRegistrationOrSignInComp('authorization')"
+    >
+      Authorization
+    </button>
+  </div>
 </div>
 
-<div  
-class="logoArea">
-<p class="question">Do you want to?</p>
-<h1>TRAVEL</h1>
-<p class="more"><span id="bigm">M</span>ORE</p>
-</div>
-
-<div  
-class="autorisationForm">
-<button 
-mat-stroked-button 
-color="primary" 
-(click)="goToRegistrationOrSignInComp('autorisation')">
-Authorization
-</button> 
-</div>
-</div>
-
-<router-outlet (activate)="componentAdded()" (deactivate)="componentRemoved()"></router-outlet>
-
-
-
+<router-outlet
+  (activate)="componentAdded()"
+  (deactivate)="componentRemoved()"
+></router-outlet>

@@ -19,7 +19,7 @@ import { MainPgComponent } from './views/main-pg/main-pg.component';
 import { SideNavBarComponent } from './views/side-nav-bar/side-nav-bar.component';
 import { HeaderComponent } from './views/header/header.component';
 import { FooterComponent } from './views/footer/footer.component';
-import { AutorisationComponent } from './shared-components/autorisation/autorisation.component';
+import { AuthorizationComponent } from './shared-components/authorization/authorization.component';
 import { ReactiveFormComponent } from './shared-components/reactive-form/reactive-form.component';
 import { TemplateDrivenFormComponent } from './shared-components/template-driven-form/template-driven-form.component';
 import { RegistrationComponent } from './shared-components/registration/registration.component';
@@ -44,7 +44,7 @@ import { SalesFormComponent } from './shared-components/sales-form/sales-form.co
     HeaderComponent,
     FooterComponent,
     RegistrationComponent,
-    AutorisationComponent,
+    AuthorizationComponent,
     ReactiveFormComponent,
     TemplateDrivenFormComponent,
     DashboardComponent,

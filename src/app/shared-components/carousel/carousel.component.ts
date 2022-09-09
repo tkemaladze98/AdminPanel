@@ -1,20 +1,13 @@
-import { AfterContentInit, AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { MatCarousel, MatCarouselComponent } from '@ngmodule/material-carousel';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css']
+  styleUrls: ['./carousel.component.css'],
 })
-export class CarouselComponent implements OnInit{
- @Input() slides:any[] = []
-  constructor() { }
+export class CarouselComponent {
+  @Input() slides: any[] = [];
 
-  ngOnInit(): void {}
-  
-  intervalNumb:number = 5000;
-  proportionNumb:number = 100;
- 
-  
-
+  intervalNumb: number = 5000;
+  proportionNumb: number = 100;
 }

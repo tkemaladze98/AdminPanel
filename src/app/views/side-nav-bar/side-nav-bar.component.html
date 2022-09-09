@@ -2,10 +2,10 @@
 
     <mat-sidenav opened #sidenav [mode]="mode.value">
         <mat-nav-list>
-            <mat-list-item *ngFor="let link of links" (click)=navigateto(link.name) [ngClass]="{'active': route.url == '/main/' + link.name}">
-              
+            <mat-list-item *ngFor="let link of links" (click)=navigateTo(link.name) [ngClass]="{'active': route.url == '/main/' + link.name}">
+
                     <mat-icon>{{link.icon}}</mat-icon>{{link.name}}
-    
+
             </mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
