@@ -1,35 +1,35 @@
 form {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    margin:30px auto;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 0px auto;
+  padding: 30px 0px;
 }
 
 .mat-form-field {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .mat-toolbar-single-row {
-    height: auto !important;
-    background: transparent;
+  height: auto !important;
+  background: transparent;
 }
 
 .mat-toolbar-single-row button {
-    width: 200px;
+  width: 200px;
 }
 
-
 #uploadFile {
-    top: 0px;
-    left: 0px;
-    width: 100%;    
-    z-index: 9;
-    opacity: 0;
-    height: 100%;
-    cursor: pointer;
-    position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 9;
+  opacity: 0;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
 }
 
 .vaidated {
-    color: green;
+  color: green;
 }

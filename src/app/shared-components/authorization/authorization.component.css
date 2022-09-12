@@ -1,13 +1,14 @@
 form {
-    margin: 200px auto;
-    display: flex;
-    flex-direction: column;
-    width: 500px
+  margin: auto;
+  padding: 200px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
 }
 .mat-form-field {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .fieldIsFilled {
-    color: green;
+  color: green;
 }

@@ -17,10 +17,10 @@ export class AuthorizationComponent {
     this.fireAuth
       .signInWithEmailAndPassword(this.userEmail, this.userPassword)
       .then((result: any) => {
-        this.route.navigate(['/main/Dashboard']);
         this.fireAuth.onAuthStateChanged((user) => {
           localStorage.setItem('currentUser', user?.refreshToken as string);
         });
+        this.route.navigate(['/main/Dashboard']);
       })
       .catch((error: any) => {
         alert(error.message);
