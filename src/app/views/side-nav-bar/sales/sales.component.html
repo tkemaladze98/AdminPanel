@@ -1,35 +1,37 @@
-<div class="cardsArea">
-    <div class="demo-button-container">
-        <a routerLink="/main/salesForm">
-            <button color="primary" mat-raised-button class="demo-button">
-                <mat-icon matSuffix>add</mat-icon>Add Sales
-            </button>
-        </a>
-    </div>
-    <div class="saleCards">
-        <mat-accordion *ngFor="let sale of allSales">
-            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-                <mat-expansion-panel-header>
-                    <mat-card class="example-card">
-                        <mat-card-header>
-                            <mat-card-title>{{sale.name}}</mat-card-title>
-                        </mat-card-header>
-                        <img mat-card-image src="{{sale.picture}}" alt="">
-                    </mat-card>
-                </mat-expansion-panel-header>
-                <p>discount size: {{sale.size}}%</p>
-                <p>description: {{sale.description}}</p>
-                <p>discount range: {{sale.range.start}} - {{sale.range.end}}</p>
-                <mat-card-actions>
-                    <button (click)="deleteSale(sale.key)" mat-raised-button color='warn'>Delete</button>
-                </mat-card-actions>
-            </mat-expansion-panel>
-        </mat-accordion>
-        
-    </div>
-
-
+<div class="cardsArea" *ngIf="allSales.length > 0">
+  <div class="demo-button-container">
+    <a routerLink="/main/salesForm">
+      <button color="primary" mat-raised-button class="demo-button">
+        <mat-icon matSuffix>add</mat-icon>Add Sales
+      </button>
+    </a>
+  </div>
+  <div class="saleCards">
+    <mat-accordion *ngFor="let sale of allSales">
+      <mat-expansion-panel
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header>
+          <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>{{ sale.name }}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{ sale.picture }}" alt="" />
+          </mat-card>
+        </mat-expansion-panel-header>
+        <p>discount size: {{ sale.size }}%</p>
+        <p>description: {{ sale.description }}</p>
+        <p>discount range: {{ sale.range.start }} - {{ sale.range.end }}</p>
+        <mat-card-actions>
+          <button (click)="deleteSale(sale.key)" mat-raised-button color="warn">
+            Delete
+          </button>
+        </mat-card-actions>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
 </div>
-
+<app-spinner *ngIf="allSales.length === 0"></app-spinner>
 
 <router-outlet></router-outlet>

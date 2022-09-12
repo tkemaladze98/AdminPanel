@@ -1,4 +1,4 @@
-<div class="cardsArea">
+<div *ngIf="allHotels.length > 0" class="cardsArea">
   <div class="demo-button-container">
     <a routerLink="/main/templateDrivenForm">
       <button color="primary" mat-raised-button class="demo-button">
@@ -6,48 +6,60 @@
       </button>
     </a>
   </div>
-<mat-card *ngFor="let hotel of allHotels" class="example-card">
-    <img mat-card-image [src]="hotel.profilePicture" alt="Profile photo">
-    <mat-card-header>
-      <mat-card-title>{{hotel.userName}}</mat-card-title>
-      <mat-card-subtitle>
-        <mat-icon *ngIf="hotel.stars >= 1" matSuffix>star_rate</mat-icon>
-        <mat-icon *ngIf="hotel.stars >= 2" matSuffix>star_rate</mat-icon>
-        <mat-icon *ngIf="hotel.stars >= 3" matSuffix>star_rate</mat-icon>
-        <mat-icon *ngIf="hotel.stars >= 4" matSuffix>star_rate</mat-icon>
-        <mat-icon *ngIf="hotel.stars == 5" matSuffix>star_rate</mat-icon>
-      </mat-card-subtitle>
-    </mat-card-header>
+  <div class="hotels">
+    <mat-card *ngFor="let hotel of allHotels" class="example-card">
+      <img mat-card-image [src]="hotel.profilePicture" alt="Profile photo" />
+      <mat-card-header>
+        <mat-card-title>{{ hotel.userName }}</mat-card-title>
+        <mat-card-subtitle>
+          <mat-icon *ngIf="hotel.stars >= 1" matSuffix>star_rate</mat-icon>
+          <mat-icon *ngIf="hotel.stars >= 2" matSuffix>star_rate</mat-icon>
+          <mat-icon *ngIf="hotel.stars >= 3" matSuffix>star_rate</mat-icon>
+          <mat-icon *ngIf="hotel.stars >= 4" matSuffix>star_rate</mat-icon>
+          <mat-icon *ngIf="hotel.stars == 5" matSuffix>star_rate</mat-icon>
+        </mat-card-subtitle>
+      </mat-card-header>
 
-    <mat-card-content>
+      <mat-card-content>
         <div class="address">
-      <p>
-        Country: {{hotel.address.country}}
-      </p>
-      <p>
-       City:  {{hotel.address.city}}
-      </p>
-      <p>
-       Location:  {{hotel.address.addressLocation}}
-      </p>
-   </div>
+          <p>Country: {{ hotel.address.country }}</p>
+          <p>City: {{ hotel.address.city }}</p>
+          <p>Location: {{ hotel.address.addressLocation }}</p>
+        </div>
 
-   <div class="contactInfo">
-     Phone:  <p>{{hotel.phone}}</p>
-     Email:  <p>{{hotel.email}}</p>
-   </div>
-   <button (click)="updateStatus(hotel)" [ngClass]="{ 'vip' : hotel.status == 1, 'user': hotel.status == 0}" mat-raised-button>{{hotel.status == 1 ? "VIP" : "User"}}</button>
-   <button (click)="getRooms(hotel.key)" mat-raised-button color='primary'>Rooms</button>
-    </mat-card-content>
-    <mat-card-actions>
-      <button (click)="getInfoToUpdate(hotel.key)" mat-raised-button color='accent'>Update</button>
-      <button (click)="deleteHotel(hotel.key)" mat-raised-button color='warn'>Delete</button>
-    </mat-card-actions>
-    <app-carousel [slides]="hotel.otherPictures"></app-carousel>
-  </mat-card>
-
-
+        <div class="contactInfo">
+          Phone:
+          <p>{{ hotel.phone }}</p>
+          Email:
+          <p>{{ hotel.email }}</p>
+        </div>
+        <button
+          (click)="updateStatus(hotel)"
+          [ngClass]="{ vip: hotel.status == 1, user: hotel.status == 0 }"
+          mat-raised-button
+        >
+          {{ hotel.status == 1 ? "VIP" : "User" }}
+        </button>
+        <button (click)="getRooms(hotel.key)" mat-raised-button color="primary">
+          Rooms
+        </button>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          (click)="getInfoToUpdate(hotel.key)"
+          mat-raised-button
+          color="accent"
+        >
+          Update
+        </button>
+        <button (click)="deleteHotel(hotel.key)" mat-raised-button color="warn">
+          Delete
+        </button>
+      </mat-card-actions>
+      <app-carousel [slides]="hotel.otherPictures"></app-carousel>
+    </mat-card>
+  </div>
 </div>
-
+<app-spinner *ngIf="allHotels.length === 0"></app-spinner>
 
 <router-outlet></router-outlet>

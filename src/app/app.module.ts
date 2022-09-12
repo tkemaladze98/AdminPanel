@@ -5,13 +5,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppMaterialModule } from './app-materials.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
-
-
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,15 +24,15 @@ import { RegistrationComponent } from './shared-components/registration/registra
 import { MatIconModule } from '@angular/material/icon';
 import { DashboardComponent } from './views/side-nav-bar/dashboard/dashboard.component';
 import { HotelsComponent } from './views/side-nav-bar/hotels/hotels.component';
-import { RoomsComponent } from './views/side-nav-bar/rooms/rooms.component'
-import { SalesComponent } from './views/side-nav-bar/sales/sales.component'
+import { RoomsComponent } from './views/side-nav-bar/rooms/rooms.component';
+import { SalesComponent } from './views/side-nav-bar/sales/sales.component';
 import { UsersComponent } from './views/side-nav-bar/users/users.component';
 import { SignInUpPgComponent } from './views/sign-in-up-pg/sign-in-up-pg.component';
 import { UpdateHotelComponent } from './views/update-hotel/update-hotel.component';
 import { CarouselComponent } from './shared-components/carousel/carousel.component';
 import { ReservationComponent } from './views/reservation/reservation.component';
-import { SalesFormComponent } from './shared-components/sales-form/sales-form.component'
-
+import { SalesFormComponent } from './shared-components/sales-form/sales-form.component';
+import { SpinnerComponent } from './shared-components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +47,7 @@ import { SalesFormComponent } from './shared-components/sales-form/sales-form.co
     TemplateDrivenFormComponent,
     DashboardComponent,
     HotelsComponent,
+    SpinnerComponent,
     RoomsComponent,
     SalesComponent,
     UsersComponent,
@@ -56,7 +55,7 @@ import { SalesFormComponent } from './shared-components/sales-form/sales-form.co
     UpdateHotelComponent,
     CarouselComponent,
     ReservationComponent,
-    SalesFormComponent
+    SalesFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,9 +70,9 @@ import { SalesFormComponent } from './shared-components/sales-form/sales-form.co
     RouterModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

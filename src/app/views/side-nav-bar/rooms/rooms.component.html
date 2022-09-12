@@ -1,59 +1,71 @@
-<div class="cardsArea">
+<div class="cardsArea" *ngIf="activeRoom.length > 0">
   <div class="demo-button-container">
-    <a routerLink="/main/reavtive/{{key}}/-1">
+    <a routerLink="/main/reavtive/{{ key }}/-1">
       <button color="primary" mat-raised-button class="demo-button">
         <mat-icon matSuffix>add</mat-icon>Add room
       </button>
     </a>
   </div>
-  <mat-card *ngFor="let room of activeRoom; let i = index" class="example-card">
-    <app-carousel [slides]="room.pictures"></app-carousel>
-    <mat-card-header>
-      <mat-card-title>{{room.roomType}}</mat-card-title>
-    </mat-card-header>
+  <div class="cards">
+    <mat-card
+      *ngFor="let room of activeRoom; let i = index"
+      class="example-card"
+    >
+      <app-carousel [slides]="room.pictures"></app-carousel>
+      <mat-card-header>
+        <mat-card-title>{{ room.roomType }}</mat-card-title>
+      </mat-card-header>
 
-    <mat-card-content>
-      <div class="address">
-        <p>
-          Size: {{room.size}}
-        </p>
-        <p>
-          View: {{room.view}}
-        </p>
-        <p>
-          Smoking: {{room.smoking}}
-        </p>
-        <p>
-          Parking: {{room.parking}}
-        </p>
-        <p>
-          animals: {{room.animals}}
-        </p>
-      </div>
+      <mat-card-content>
+        <div class="address">
+          <p>Size: {{ room.size }}</p>
+          <p>View: {{ room.view }}</p>
+          <p>Smoking: {{ room.smoking }}</p>
+          <p>Parking: {{ room.parking }}</p>
+          <p>animals: {{ room.animals }}</p>
+        </div>
 
-      <div class="children">
-        Children:
+        <div class="children">
+          Children:
 
-        <p> to Six Years Old: {{room.children.tosix | percent}} </p>
-        <p> from Six To Tvelve {{room.children.totvelve | percent}} </p>
+          <p>to Six Years Old: {{ room.children.tosix | percent }}</p>
+          <p>from Six To Tvelve {{ room.children.totvelve | percent }}</p>
+        </div>
+        <p>Prise: {{ room.prise | currency }}</p>
 
-      </div>
-      <p>Prise: {{room.prise | currency}}</p>
-
-      <mat-divider> </mat-divider>
-      <button (click)="onBtnClick()" mat-raised-button>{{contGeneraterBtnTitle}}</button> 
-      <div *ngIf="clicked == true" class="more">
-      <p class="facilities">facilities:</p>
-      <div class="facilitiesArea">
-        <p *ngFor="let facil of room.facilities; let f = index">{{facil}}</p>
-      </div></div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button (click)="getInfoToupdate(key,i)" mat-raised-button color='accent'>Update</button>
-      <button (click)="deleteRoom(i)" mat-raised-button color='warn'>Delete</button>
-    </mat-card-actions>
-    <button (click)="goToreservation(key, i)" mat-raised-button color='primary'>reserve</button>
-  </mat-card>
-
-
+        <mat-divider> </mat-divider>
+        <button (click)="onBtnClick()" mat-raised-button>
+          {{ contGeneraterBtnTitle }}
+        </button>
+        <div *ngIf="clicked == true" class="more">
+          <p class="facilities">facilities:</p>
+          <div class="facilitiesArea">
+            <p *ngFor="let facil of room.facilities; let f = index">
+              {{ facil }}
+            </p>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          (click)="getInfoToupdate(key, i)"
+          mat-raised-button
+          color="accent"
+        >
+          Update
+        </button>
+        <button (click)="deleteRoom(i)" mat-raised-button color="warn">
+          Delete
+        </button>
+      </mat-card-actions>
+      <button
+        (click)="goToreservation(key, i)"
+        mat-raised-button
+        color="primary"
+      >
+        reserve
+      </button>
+    </mat-card>
+  </div>
 </div>
+<app-spinner *ngIf="activeRoom.length === 0"></app-spinner>

@@ -14,8 +14,8 @@ export class HeaderComponent {
   onBtnClick(icon: string) {
     if (icon == 'logout') {
       this.fireAuth.signOut();
-      localStorage.clear();
       this.route.navigate(['/signInUp']);
+      localStorage.clear();
     }
   }
 }
