@@ -34,10 +34,10 @@
         <p>Prise: {{ room.prise | currency }}</p>
 
         <mat-divider> </mat-divider>
-        <button (click)="onBtnClick()" mat-raised-button>
-          {{ contGeneraterBtnTitle }}
+        <button (click)="onBtnClick(i)" mat-raised-button>
+          {{ clickedIndex.includes(i) ? 'less' : 'more' }}
         </button>
-        <div *ngIf="clicked == true" class="more">
+        <div *ngIf="clickedIndex.includes(i)" class="more">
           <p class="facilities">facilities:</p>
           <div class="facilitiesArea">
             <p *ngFor="let facil of room.facilities; let f = index">

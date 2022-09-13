@@ -31,7 +31,7 @@ export class UsersComponent implements OnInit {
     this.firebase.readAllUsers().subscribe((response: any) => {
       this.dataSource = [];
       response.forEach((element: any) => {
-        var user = element.payload.doc.data();
+        let user = element.payload.doc.data();
         user.key = element.payload.doc.id;
         this.dataSource.push(user);
 
